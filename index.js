@@ -1,6 +1,12 @@
-function fetchBooks() {
+
+function fetchBooks() { // this function should include a fetch request to the Game of Thrones API (https://anapioficeandfire.com/api/booksLinks to an external site.). 
   // To pass the tests, don't forget to return your fetch!
-  
+  fetch("https://anapioficeandfire.com/api/books")
+  //The returned response should be converted to JSON.
+  .then(response => response.json())    //  always check the website console for errors you had .jsonn you needed .json
+  .then(info =>{
+      renderBooks(info);      //Then, it should call the second function, renderBooks()
+  })
 }
 
 function renderBooks(books) {
@@ -15,3 +21,6 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks();
 });
+
+//still moving too fast dont rush your work
+//you uploaded the assingment without a single push or add 
